@@ -13,10 +13,21 @@ textarea[name=msg] {
 /* textarea[name=msg]::placeholder {
     line-height: 50px; 
 } */
+
+#area {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .send_place {
     position: fixed;
     /* width: 100vw; */
     /* height: 100px; */
     bottom: 0;
     margin-bottom: 1%;
+}
+
+.cosl {
+    display: inline-block;
+    margin-right: 1%;
 }

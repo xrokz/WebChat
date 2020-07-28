@@ -19,11 +19,15 @@ app.get("/room", (req, res) => {
 socket.on("connection", io => {
     io.on("user-join", user => {
         socket.emit("user-connected", user)
+        io.on('disconnect', data => {
+            socket.emit("user-left", user)
+        });
     });
     
     io.on("send-message", data => {
         socket.emit("new-message", data);
     });
+    
 });
 
 server.listen(port, () => console.log(`WebChat app listening at http://localhost:${port} !`));

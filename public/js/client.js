@@ -17,8 +17,32 @@ $(function() {
     })
 })
 socket.on("new-message", data => {
-    $("#area").html($("#area").html() + `<br/>${data.name}: ${data.msg}`)
+    // $("#area").html($("#area").html() + `<br/>${data.name}: ${data.msg}`)
+    let el = document.createElement("div");
+    el.innerHTML = `
+    <div class="roww">
+        <div class="cosl">
+            <img src="/public/img/2.png" width="60" style="border-radius: 180%">
+        </div>
+        <div class="cosl">
+            <strong>${data.name}</strong><p>${data.msg.substring(0, data.msg.length - 1)}</p>
+        </div>
+    </div>
+    <hr>
+    `
+    el.style.float = "left";
+    el.style.textAlign = "left";
+    el.style.width = "100%";
+    $("#area")[0].appendChild(el)
 })
 socket.on("user-connected", username => {
-    console.log("New User: ", username);
+    $("#area").html($("#area").html() + `<br/><strong>${username}</strong> wants to chat <hr>`)
 })
+
+socket.on("user-left", data => {
+    $("#area").html($("#area").html() + `<br/><strong>${data}</strong> don't want to keep talking <hr>`)
+})
+
+window.onbeforeunload = () => {
+    socket.disconnect(name)
+}
