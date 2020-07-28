@@ -25,7 +25,7 @@ socket.on("new-message", data => {
             <img src="/public/img/2.png" width="60" style="border-radius: 180%">
         </div>
         <div class="cosl">
-            <strong>${data.name}</strong><p>${data.msg.substring(0, data.msg.length - 1)}</p>
+            <strong>${data.name}</strong><p>${data.msg}</p>
         </div>
     </div>
     <hr>
