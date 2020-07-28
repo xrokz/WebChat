@@ -2,3 +2,21 @@ body {
     font-family: sans-serif;
     text-align: center !important;
 }
+
+textarea[name=msg] {
+    resize: none;
+    width: 95vw;
+    /* height: 0px; */
+    height: 100%;
+    margin-left: 2.7%;
+  }
+/* textarea[name=msg]::placeholder {
+    line-height: 50px; 
+} */
+.send_place {
+    position: fixed;
+    /* width: 100vw; */
+    /* height: 100px; */
+    bottom: 0;
+    margin-bottom: 1%;
+}
