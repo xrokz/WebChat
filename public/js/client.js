@@ -1,12 +1,12 @@
 const socket = io('/');
 console.log(name);
-socket.emit("user-join", name);
+socket.emit("user-join", {name, room});
 
 function send(e) {
     // console.log($("#msg")[0].which);
     if(e.which == 13) {
         //submit form via ajax, this is not JS but server side scripting so not showing here
-        socket.emit("send-message", {name, msg: $("#msg").val()})
+        socket.emit("send-message", {room, name, msg: $("#msg").val()})
         $("#msg").val("");
         e.preventDefault();
     }
@@ -20,11 +20,11 @@ socket.on("new-message", data => {
     // $("#area").html($("#area").html() + `<br/>${data.name}: ${data.msg}`)
     let el = document.createElement("div");
     el.innerHTML = `
-    <div class="roww">
-        <div class="cosl">
-            <img src="/public/img/2.png" width="60" style="border-radius: 180%">
+    <div class="row">
+        <div class="col-xs-1">
+            <img src="/public/img/2.png" width="50" style="border-radius: 180%">
         </div>
-        <div class="cosl">
+        <div class="col">
             <strong>${data.name}</strong><p>${data.msg}</p>
         </div>
     </div>
