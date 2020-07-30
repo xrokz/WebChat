@@ -14,7 +14,7 @@ $ cd WebChat
 
 3. now you are done just run the app using
 `$ npm run dev`
-and WebChat will be running at (localhost:3000)[http://localhost:3000]
+and WebChat will be running at [localhost:3000](http://localhost:3000)
 
 4. you can also host it to public by running
 `$ npm run start`
