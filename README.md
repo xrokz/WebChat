@@ -56,6 +56,10 @@ and the `ROOM_KEY` can be anything you want
 ### Chat Logs
 till now i have no chat logging so when you join a room you can't see the older messages but in the future i will add chat saver no worries..
 
+
+## Contributing
+You can help me getting this project done by forking this app and making your own adds and i will check and approve it..
+
 ## Troubleshooting
 in case you saw any errors you can report them for me in the [issues](https://github.com/xRokz/WebChat/issues)
 and i will be very greatfull for that..
