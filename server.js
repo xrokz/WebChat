@@ -4,7 +4,7 @@ const server = require("http").Server(app);
 const socket = require("socket.io")(server);
 
 app.set("view engine", "ejs");
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use("/public", express.static("./public"));
 // app.use("/", express.static("./node_modules"));
 app.get('/', (req, res) => res.render('index', {}));

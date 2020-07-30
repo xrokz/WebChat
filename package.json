@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "npm run dev",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "set PORT=80 && nodemon server.js"
   },
   "author": "xRokz",
   "license": "MIT",
