@@ -1,0 +1,3 @@
+{
+    "url": "mongodb+srv://USER:PASS@CLUSTER_NAME.mongodb.net/DATABASE?retryWrites=true&w=majority"
+}

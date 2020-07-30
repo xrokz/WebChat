@@ -2,7 +2,23 @@ const express = require('express');
 const app = express();
 const server = require("http").Server(app);
 const socket = require("socket.io")(server);
+const mongoose = require("mongoose");
+const config = require("./config/db.json")
 
+const uri = config.uri;
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+let con = mongoose.connection;
+
+con.once("open", function() {
+  console.log("Successfully connected to the database!");
+});
+
+con.on("error", console.error.bind(console, "Connection Error:"));
 app.set("view engine", "ejs");
 const port = process.env.PORT || 3000;
 app.use("/public", express.static("./public"));
